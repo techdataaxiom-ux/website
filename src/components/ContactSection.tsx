@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Send, MapPin } from "lucide-react";
+import { Mail, MessageCircle, Send } from "lucide-react";
 import { useState } from "react";
 
 function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -97,12 +97,6 @@ export default function ContactSection() {
                   <span className="text-xs text-neutral-400 dark:text-neutral-500">Official Company Page</span>
                 </div>
               </a>
-              <div className="flex items-center gap-4 text-neutral-600 dark:text-neutral-300">
-                <div className="p-3 bg-white dark:bg-[#111] rounded-full shadow-sm">
-                  <MapPin size={20} />
-                </div>
-                <span className="font-medium">Saudi Arabia</span>
-              </div>
             </div>
 
            

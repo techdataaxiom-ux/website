@@ -47,8 +47,8 @@ export default function ExpertiseSection() {
       items: ["Machine Learning & Statistics", "Descriptive Statistics", "Inferential Statistics", "Biostatistics", "Statistical Analysis Frameworks"],
     },
     {
-      category: "Epidemiology & Public Health",
-      items: ["Epidemiology", "Causal Inference & Research Methods", "Public Health Data Systems"],
+      category: "Epidemiology & Biostatistics",
+      items: ["Epidemiology", "Clinical Trials", "Research Protocols", "Sample Size Determination", "Statistical Analysis Plan", "Data Analysis", "Causal Inference & Research Methods", "Public Health Data Systems"],
     },
     {
       category: "Research & Policy",

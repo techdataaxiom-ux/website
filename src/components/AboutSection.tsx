@@ -8,7 +8,9 @@ export default function AboutSection() {
   const highlights = [
     "Data Warehousing",
     "AI & Machine Learning",
-    "Statistics & Survey",
+    "Research Protocols",
+    "Clinical Trials",
+    "Sample Size Determination",
     "Policy Analysis",
   ];
 
@@ -29,7 +31,7 @@ export default function AboutSection() {
               I obtained a doctorate in Applied Statistics and a Master's in Public Health degree from French universities.
             </p>
             <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed mb-8">
-              I bring a blend of Statistics, Data Science, AI, Public Health, and policy-related extensive experience in the fields of data collection and warehousing, developing data products for management, policy assessment & analysis, designing research, and statistical modelling & predictive analytics through causality.
+              Public health consultant and statistician specializing in survey design, clinical trials, research protocol, policy analysis, data analytics, and AI-enabled decision support systems for government, academic, and development sectors.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
