@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { LocaleProvider } from "@/lib/LocaleProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -135,9 +136,11 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col bg-background text-foreground bg-white dark:bg-[#050505] transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
+          <LocaleProvider>
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </LocaleProvider>
         </ThemeProvider>
       </body>
     </html>

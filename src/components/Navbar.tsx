@@ -2,20 +2,25 @@
 
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
+import { useLocale } from "@/lib/LocaleProvider";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
-const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#expertise" },
-  { name: "Clients", href: "#clients" },
-  { name: "Contact", href: "#contact" },
-];
+// nav link hrefs remain fixed; labels are provided by translations inside the component
 
 export default function Navbar() {
+  const { locale, setLocale, t } = useLocale();
+
+  const navLinks = [
+    { name: t("nav.home"), href: "#home" },
+    { name: t("nav.about"), href: "#about" },
+    { name: t("nav.projects"), href: "#projects" },
+    { name: t("nav.skills"), href: "#expertise" },
+    { name: t("nav.training"), href: "#training" },
+    { name: t("nav.clients"), href: "#clients" },
+    { name: t("nav.contact"), href: "#contact" },
+  ];
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -105,6 +110,16 @@ export default function Navbar() {
               })}
             </ul>
             <div className="w-px h-6 bg-neutral-300 dark:bg-neutral-700" />
+            <select
+              aria-label="Select language"
+              value={locale}
+              onChange={(e) => setLocale(e.target.value as any)}
+              className="text-sm bg-transparent border border-neutral-200 dark:border-neutral-800 rounded-md px-2 py-1"
+            >
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+              <option value="ar">AR</option>
+            </select>
             <ThemeToggle />
           </nav>
 
@@ -138,6 +153,19 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <div>
+              <label className="text-sm text-neutral-600 dark:text-neutral-400 block mb-1">Language</label>
+              <select
+                aria-label="Select language"
+                value={locale}
+                onChange={(e) => setLocale(e.target.value as any)}
+                className="w-full text-base bg-transparent border border-neutral-200 dark:border-neutral-800 rounded-md px-3 py-2"
+              >
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="ar">العربية</option>
+              </select>
+            </div>
           </div>
         )}
       </header>

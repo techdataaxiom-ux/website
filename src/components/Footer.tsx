@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useLocale } from "@/lib/LocaleProvider";
 
 function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -15,6 +16,7 @@ function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLocale();
 
   return (
     <footer className="w-full bg-neutral-50 dark:bg-[#0a0a0a] border-t border-neutral-200 dark:border-neutral-800 py-10 px-6">
@@ -29,9 +31,7 @@ export default function Footer() {
           </Link>
 
           <div className="flex items-center gap-6">
-            <p className="text-center">
-              Transforming data into actionable insights for healthcare and public sector systems.
-            </p>
+            <p className="text-center">{t("footer.tagline")}</p>
             <a
               href="https://www.linkedin.com/company/development-thorough-data/"
               target="_blank"
@@ -52,9 +52,7 @@ export default function Footer() {
             &copy; {currentYear} — Tech Data Axiom. All rights reserved.
           </p>
 
-          <p className="text-center md:text-right">
-            Healthcare Analytics · Data Consulting · BI & Analytics
-          </p>
+          <p className="text-center md:text-right">{t("footer.right")}</p>
         </div>
 
       </div>

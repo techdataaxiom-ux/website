@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLocale } from "@/lib/LocaleProvider";
 
 function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -68,6 +69,8 @@ export default function HeroSection() {
     return () => clearTimeout(timer);
   }, [text, isDeleting, loopNum]);
 
+  const { t } = useLocale();
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Moving Gradient Orb Background */}
@@ -85,7 +88,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
         >
           <span className="inline-block py-1 px-3 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-sm font-semibold tracking-wide mb-6 border border-blue-200 dark:border-blue-800/50">
-            Available for consulting
+            {t("hero.available")}
           </span>
         </motion.div>
 
@@ -108,7 +111,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light"
         >
-          Public health consultant and statistician specializing in survey design, clinical trials, research protocols, policy analysis, data analytics, and AI-enabled decision support systems for government, academic, and development sectors.
+          {t("hero.description")}
         </motion.p>
 
         <motion.div
@@ -122,7 +125,7 @@ export default function HeroSection() {
             href="#contact"
             className="group inline-flex h-12 items-center justify-center rounded-full border border-neutral-300 dark:border-neutral-700 bg-transparent px-8 font-medium text-neutral-900 dark:text-white transition-all hover:bg-neutral-100 dark:hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 dark:focus:ring-offset-neutral-900"
           >
-            Contact Me
+            {t("hero.contact")}
           </Link>
         </motion.div>
 
@@ -138,7 +141,7 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 rounded-full bg-white dark:bg-[#111] px-4 py-2 text-sm font-medium text-neutral-900 dark:text-white shadow-sm hover:shadow-md hover:scale-105 transition-all border border-neutral-200 dark:border-neutral-700"
             >
               <Mail size={16} />
-              <span>Email</span>
+              <span>{t("contact.emailLabel")}</span>
             </a>
             <a
               href="https://www.linkedin.com/company/development-thorough-data/"
@@ -147,7 +150,7 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 rounded-full bg-[#0A66C2] px-4 py-2 text-sm font-medium text-white hover:bg-[#0858a6] hover:scale-105 transition-transform shadow-sm"
             >
               <LinkedInIcon className="h-4 w-4" />
-              <span>Official Company Page</span>
+              <span>{t("contact.linkedin")}</span>
             </a>
           </div>
         </motion.div>

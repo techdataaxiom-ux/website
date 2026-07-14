@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, MessageCircle, Send } from "lucide-react";
 import { useState } from "react";
+import { useLocale } from "@/lib/LocaleProvider";
 
 function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -21,6 +22,7 @@ function LinkedInIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export default function ContactSection() {
+  const { t } = useLocale();
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -64,18 +66,18 @@ export default function ContactSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-              Let&apos;s build an <span className="text-blue-600 dark:text-blue-400">AI-enabled Ecosystem</span>
+              {t("contact.title")} <span className="text-blue-600 dark:text-blue-400" />
             </h2>
             <p className="text-neutral-600 dark:text-neutral-400 text-lg mb-8 leading-relaxed">
-              Available for consulting on data science, AI solutions, data warehousing, policy analysis, and decision support systems. Let&apos;s discuss how data-driven insights can transform your organization.
+              {t("contact.subtitle")}
             </p>
 
             <div className="flex flex-col gap-6 mb-12">
-              <a href="mailto:bhatti_sb@yahoo.com" className="flex items-center gap-4 text-neutral-600 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group">
+              <a href={`mailto:${t("contact.emailAddr")}`} className="flex items-center gap-4 text-neutral-600 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group">
                 <div className="p-3 bg-white dark:bg-[#111] rounded-full shadow-sm group-hover:scale-110 transition-transform">
                   <Mail size={20} />
                 </div>
-                <span className="font-medium">bhatti_sb@yahoo.com</span>
+                <span className="font-medium">{t("contact.emailAddr")}</span>
               </a>
               <a href="https://wa.me/966533475986" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-neutral-600 dark:text-neutral-300 hover:text-green-600 dark:hover:text-green-500 transition-colors group">
                 <div className="p-3 bg-white dark:bg-[#111] rounded-full shadow-sm group-hover:scale-110 transition-transform">
@@ -94,7 +96,7 @@ export default function ContactSection() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-medium">LinkedIn</span>
-                  <span className="text-xs text-neutral-400 dark:text-neutral-500">Official Company Page</span>
+                  <span className="text-xs text-neutral-400 dark:text-neutral-500">{t("contact.linkedin")}</span>
                 </div>
               </a>
             </div>
@@ -108,48 +110,48 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="bg-white dark:bg-[#111] border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 shadow-sm"
           >
-            <h3 className="text-2xl font-bold mb-6 text-neutral-900 dark:text-white">Send a Message</h3>
+            <h3 className="text-2xl font-bold mb-6 text-neutral-900 dark:text-white">{t("contact.sendHeading")}</h3>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div>
-                <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 block">Name</label>
+                <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 block">{t("contact.nameLabel")}</label>
                 <input
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-[#0a0a0a] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-all"
-                  placeholder="John Doe"
+                  placeholder={t("contact.placeholder.name")}
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 block">Email</label>
+                <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 block">{t("contact.emailFieldLabel")}</label>
                 <input
                   type="email"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-[#0a0a0a] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-all"
-                  placeholder="john@example.com"
+                  placeholder={t("contact.placeholder.email")}
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 block">Message</label>
+                <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-2 block">{t("contact.messageLabel")}</label>
                 <textarea
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-[#0a0a0a] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-all h-32 resize-none"
-                  placeholder="Tell me about your project..."
+                  placeholder={t("contact.placeholder.message")}
                 />
               </div>
               {status === "success" && (
                 <p className="text-sm font-medium text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-xl px-4 py-3">
-                  Your message has been sent successfully. I&apos;ll be in touch soon.
+                  {t("contact.success")}
                 </p>
               )}
               {status === "error" && (
                 <p className="text-sm font-medium text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-xl px-4 py-3">
-                  {errorMessage}
+                  {errorMessage || t("contact.error.network")}
                 </p>
               )}
               <button
@@ -157,9 +159,9 @@ export default function ContactSection() {
                 disabled={isSubmitting}
                 className="w-full py-4 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-xl font-bold text-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-colors flex items-center justify-center gap-2 mt-4 disabled:opacity-70"
               >
-                {isSubmitting ? "Sending..." : (
+                {isSubmitting ? t("contact.sending") : (
                   <>
-                    <span>Send Inquiry</span>
+                    <span>{t("contact.sendInquiry")}</span>
                     <Send size={18} />
                   </>
                 )}
@@ -171,7 +173,7 @@ export default function ContactSection() {
                 className="w-full py-4 border border-green-500 dark:border-green-600 text-green-600 dark:text-green-400 rounded-xl font-bold text-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors flex items-center justify-center gap-2"
               >
                 <MessageCircle size={18} />
-                <span>Chat on WhatsApp</span>
+                <span>{t("contact.chatWhatsApp")}</span>
               </a>
             </form>
           </motion.div>

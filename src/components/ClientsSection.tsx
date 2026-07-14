@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLocale } from "@/lib/LocaleProvider";
 
 export default function ClientsSection() {
   const clients = [
@@ -14,6 +15,8 @@ export default function ClientsSection() {
 
   const loopClients = [...clients, ...clients];
 
+  const { t } = useLocale();
+
   return (
     <section
       id="clients"
@@ -24,14 +27,10 @@ export default function ClientsSection() {
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-            Trusted by{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              Government & Development Sector
-            </span>
+            {t("clients.title")} <span className="text-blue-600 dark:text-blue-400">{t("clients.subtitle")}</span>
           </h2>
           <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto text-lg">
-            Collaborating with leading institutions on AI, public health systems,
-            and data-driven decision-making.
+            {t("clients.desc")}
           </p>
         </div>
 
@@ -76,7 +75,7 @@ export default function ClientsSection() {
 
         {/* Bottom text */}
         <p className="text-center text-neutral-500 dark:text-neutral-500 text-sm mt-12">
-          Delivering AI, data systems, and public health solutions for impactful decision-making.
+          {t("clients.bottom")}
         </p>
       </div>
     </section>

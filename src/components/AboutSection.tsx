@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import { useLocale } from "@/lib/LocaleProvider";
 
 export default function AboutSection() {
+  const { t } = useLocale();
   const highlights = [
     "Data Warehousing",
     "AI & Machine Learning",
@@ -25,13 +27,13 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-              About <span className="text-blue-600 dark:text-blue-400">Me</span>
+              {t("about.title")} <span className="text-blue-600 dark:text-blue-400" />
             </h2>
             <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed mb-6">
-              I obtained a doctorate in Applied Statistics and a Master's in Public Health degree from French universities.
+              {t("about.p1")}
             </p>
             <p className="text-neutral-600 dark:text-neutral-300 text-lg leading-relaxed mb-8">
-              Public health consultant and statistician specializing in survey design, clinical trials, research protocol, policy analysis, data analytics, and AI-enabled decision support systems for government, academic, and development sectors.
+              {t("about.p2")}
             </p>
 
             <div className="grid grid-cols-2 gap-4">

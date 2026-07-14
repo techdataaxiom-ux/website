@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import { BrainCircuit, Database, Workflow, Code2, Sparkles, Mic2 } from "lucide-react";
+import { useLocale } from "@/lib/LocaleProvider";
 
 export default function ExpertiseSection() {
+  const { t } = useLocale();
   const expertise = [
     {
       title: "Data Warehousing & Engineering",
@@ -66,7 +68,7 @@ export default function ExpertiseSection() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
           >
-            Data Science & AI <span className="text-blue-600 dark:text-blue-400">Expertise</span>
+            {t("expertise.title")} <span className="text-blue-600 dark:text-blue-400" />
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +77,7 @@ export default function ExpertiseSection() {
             transition={{ delay: 0.1 }}
             className="text-neutral-600 dark:text-neutral-400 text-lg max-w-2xl"
           >
-            Transforming data into actionable insights through advanced analytics, AI solutions, and evidence-based decision support systems.
+            {t("expertise.subtitle")}
           </motion.p>
         </div>
 
@@ -107,7 +109,7 @@ export default function ExpertiseSection() {
             viewport={{ once: true }}
             className="text-2xl md:text-3xl font-bold tracking-tight mb-8 text-center"
           >
-            Technical Stack
+            {t("expertise.technicalStack")}
           </motion.h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

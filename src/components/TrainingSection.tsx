@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLocale } from "@/lib/LocaleProvider";
 
 export default function TrainingSection() {
+  const { t } = useLocale();
   const trainings = [
     {
       id: 1,
@@ -39,11 +41,14 @@ export default function TrainingSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
+          {
+            // use translations for heading and subtitle
+          }
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-            Training & <span className="text-blue-600 dark:text-blue-400">Workshops</span>
+            {t("training.title")} <span className="text-blue-600 dark:text-blue-400" />
           </h2>
           <p className="text-neutral-600 dark:text-neutral-400 text-lg max-w-2xl mx-auto">
-            Selected trainings and short courses I have delivered or attended to strengthen analytic capacity and research methods.
+            {t("training.subtitle")}
           </p>
         </motion.div>
 

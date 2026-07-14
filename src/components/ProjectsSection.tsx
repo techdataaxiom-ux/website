@@ -3,9 +3,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown, Code, Database, LineChart, Cpu, MessageSquare } from "lucide-react";
+import { useLocale } from "@/lib/LocaleProvider";
 
 export default function ProjectsSection() {
   const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  const { t } = useLocale();
 
   const projects = [
     {
@@ -68,10 +71,10 @@ export default function ProjectsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-            Featured Projects & <span className="text-blue-600 dark:text-blue-400">Case Studies</span>
+            {t("projects.title")} <span className="text-blue-600 dark:text-blue-400" />
           </h2>
           <p className="text-neutral-600 dark:text-neutral-400 text-lg max-w-2xl mx-auto">
-            Data products, AI-enabled analytics solutions, data warehousing systems, and decision-support dashboards developed for management and policy-making.
+            {t("projects.subtitle")}
           </p>
         </motion.div>
 
@@ -121,26 +124,26 @@ export default function ProjectsSection() {
                       <div className="mt-6 pt-6 border-t border-neutral-100 dark:border-neutral-800 flex flex-col gap-4 text-sm">
                         <div className="flex flex-col sm:flex-row gap-4 mb-2">
                           <div className="flex-1">
-                            <strong className="text-neutral-900 dark:text-neutral-100 block mb-1">Client:</strong>
+                            <strong className="text-neutral-900 dark:text-neutral-100 block mb-1">{t("projects.clientLabel")}</strong>
                             <p className="text-neutral-600 dark:text-neutral-400">{project.client}</p>
                           </div>
                           <div className="flex-1">
-                            <strong className="text-neutral-900 dark:text-neutral-100 block mb-1">Domain:</strong>
+                            <strong className="text-neutral-900 dark:text-neutral-100 block mb-1">{t("projects.domainLabel")}</strong>
                             <span className="inline-block px-2.5 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-lg text-xs font-semibold border border-blue-100 dark:border-blue-800/50">
                               {project.domain}
                             </span>
                           </div>
                         </div>
                         <div>
-                          <strong className="text-neutral-900 dark:text-neutral-100 block mb-1">Problem:</strong>
+                          <strong className="text-neutral-900 dark:text-neutral-100 block mb-1">{t("projects.problemLabel")}</strong>
                           <p className="text-neutral-600 dark:text-neutral-400">{project.problem}</p>
                         </div>
                         <div>
-                          <strong className="text-neutral-900 dark:text-neutral-100 block mb-1">Solution:</strong>
+                          <strong className="text-neutral-900 dark:text-neutral-100 block mb-1">{t("projects.solutionLabel")}</strong>
                           <p className="text-neutral-600 dark:text-neutral-400">{project.solution}</p>
                         </div>
                         <div>
-                          <strong className="text-neutral-900 dark:text-neutral-100 block mb-1">Business Impact:</strong>
+                          <strong className="text-neutral-900 dark:text-neutral-100 block mb-1">{t("projects.impactLabel")}</strong>
                           <p className="text-blue-600 dark:text-blue-400 font-medium">{project.impact}</p>
                         </div>
                         <div className="pt-2 flex flex-wrap gap-2">
