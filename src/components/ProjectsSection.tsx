@@ -59,10 +59,34 @@ export default function ProjectsSection() {
       tools: ["Campaign Evaluation", "MNCH Data Analysis", "Health Policy", "Survey Sampling", "Impact Assessment"],
       impact: "Enabled timely reporting and improved policy awareness strategies, supporting better health outcomes for mothers and children.",
     },
+    {
+      id: 5,
+      title: "Workflow Automation for Monitoring Programs",
+      client: "Public Sector & Development Partners",
+      domain: "Data Workflow & Automation",
+      icon: <Code className="text-emerald-500" size={24} />,
+      summary: "Designed repeatable data workflows and reporting automation to streamline survey operations, reduce manual handling, and strengthen monitoring cycles.",
+      problem: "Manual reporting and fragmented data movement slowed program oversight and created avoidable delays in decision-making.",
+      solution: "Built structured workflow logic, standardized reporting steps, and automation touchpoints so teams could move from raw data to decision-ready outputs faster.",
+      tools: ["Workflow Design", "Reporting Automation", "Operational Analytics", "Process Standardization", "Monitoring Systems"],
+      impact: "Improved delivery speed and consistency, giving stakeholders faster visibility into program performance.",
+    },
+    {
+      id: 6,
+      title: "Analytics Automation for Evidence-Based Delivery",
+      client: "Policy & Program Implementation Teams",
+      domain: "Automation & Insights",
+      icon: <Cpu className="text-indigo-500" size={24} />,
+      summary: "Applied automated analytical workflows to convert complex datasets into concise dashboards and operational insights for program teams.",
+      problem: "Teams needed timely evidence without spending excessive time on repetitive data preparation and reporting tasks.",
+      solution: "Created streamlined analysis pipelines and automated outputs that supported monitoring, program review, and stakeholder updates with minimal manual effort.",
+      tools: ["Automation", "Dashboarding", "Data Integration", "Program Insights", "Reporting Pipelines"],
+      impact: "Enabled faster reporting cycles and stronger decision support for policy and program implementation.",
+    },
   ];
 
   return (
-    <section id="projects" className="py-24 bg-neutral-50 dark:bg-[#0a0a0a]">
+    <section id="projects" className="py-24 bg-neutral-50 dark:bg-[#07111f]">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,7 +110,7 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`bg-white dark:bg-[#111] border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group ${index === 4 ? "md:col-span-2 md:w-1/2 md:mx-auto" : ""}`}
+              className="bg-white dark:bg-[#0b1728] border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
             >
               <div 
                 className="p-6 md:p-8 cursor-pointer relative overflow-hidden"

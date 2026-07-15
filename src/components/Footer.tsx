@@ -19,7 +19,7 @@ export default function Footer() {
   const { t } = useLocale();
 
   return (
-    <footer className="w-full bg-neutral-50 dark:bg-[#0a0a0a] border-t border-neutral-200 dark:border-neutral-800 py-10 px-6">
+    <footer className="w-full bg-neutral-50 dark:bg-[#07111f] border-t border-neutral-200 dark:border-neutral-800 py-10 px-6">
 
       <div className="max-w-7xl mx-auto flex flex-col gap-6">
 

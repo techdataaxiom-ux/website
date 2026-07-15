@@ -11,6 +11,14 @@ export default function ClientsSection() {
     { id: 3, name: "PBS", logo: "/logo/pbs.jpg" },
     { id: 4, name: "PWD", logo: "/logo/pwd.jpeg" },
     { id: 5, name: "PCP", logo: "/logo/pcp.jpeg" },
+    { id: 6, name: "Cornis", logo: "/logo/cornis-logo.png" },
+    { id: 7, name: "CVS Health", logo: "/logo/cvs-health.svg" },
+    { id: 8, name: "GPN Technologies", logo: "/logo/gpn-technologies.jpg" },
+    { id: 9, name: "KPMG", logo: "/logo/kpmg-logo.jpg" },
+    { id: 10, name: "MoIB", logo: "/logo/moib.jpg" },
+    { id: 11, name: "Near Space", logo: "/logo/near_space_logo.jpg" },
+    { id: 12, name: "Queens University", logo: "/logo/queens-university.png" },
+    { id: 13, name: "Image", logo: "/logo/images.jpg" },
   ];
 
   const loopClients = [...clients, ...clients];
@@ -20,7 +28,7 @@ export default function ClientsSection() {
   return (
     <section
       id="clients"
-      className="py-24 bg-white dark:bg-[#0a0a0a] overflow-hidden"
+      className="py-24 bg-white dark:bg-[#07111f] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
 
@@ -32,12 +40,15 @@ export default function ClientsSection() {
           <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto text-lg">
             {t("clients.desc")}
           </p>
+          <p className="text-neutral-500 dark:text-neutral-400 max-w-3xl mx-auto mt-4 text-sm md:text-base">
+            Selected engagements span policy analytics, data workflow design, reporting automation, and evidence-driven program support.
+          </p>
         </div>
 
         {/* Gradient edges */}
         <div className="relative">
-          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white dark:from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white dark:from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white dark:from-[#07111f] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white dark:from-[#07111f] to-transparent z-10 pointer-events-none" />
 
           {/* Scrolling logos */}
           <motion.div

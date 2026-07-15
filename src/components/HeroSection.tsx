@@ -78,7 +78,7 @@ export default function HeroSection() {
         <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-blue-500/20 dark:bg-blue-600/20 rounded-full blur-[100px] animate-blob" />
         <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-purple-500/20 dark:bg-purple-600/20 rounded-full blur-[100px] animate-blob animation-delay-2000" />
         <div className="absolute -bottom-1/4 left-1/2 w-[600px] h-[600px] bg-cyan-500/20 dark:bg-teal-600/20 rounded-full blur-[100px] animate-blob animation-delay-4000" />
-        <div className="absolute inset-0 bg-white/40 dark:bg-[#050505]/60 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-white/40 dark:bg-[#07111f]/80 backdrop-blur-[1px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 z-10 w-full flex flex-col items-center justify-center text-center">
@@ -137,8 +137,8 @@ export default function HeroSection() {
         >
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
-              href="mailto:bhatti_sb@yahoo.com"
-              className="inline-flex items-center gap-2 rounded-full bg-white dark:bg-[#111] px-4 py-2 text-sm font-medium text-neutral-900 dark:text-white shadow-sm hover:shadow-md hover:scale-105 transition-all border border-neutral-200 dark:border-neutral-700"
+              href="mailto:techdataaxiom@gmail.com"
+              className="inline-flex items-center gap-2 rounded-full bg-white dark:bg-[#0b1728] px-4 py-2 text-sm font-medium text-neutral-900 dark:text-white shadow-sm hover:shadow-md hover:scale-105 transition-all border border-neutral-200 dark:border-neutral-700"
             >
               <Mail size={16} />
               <span>{t("contact.emailLabel")}</span>

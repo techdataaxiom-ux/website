@@ -59,7 +59,7 @@ export default function ExpertiseSection() {
   ];
 
   return (
-    <section id="expertise" className="py-24 bg-white dark:bg-[#050505]">
+    <section id="expertise" className="py-24 bg-white dark:bg-[#07111f]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16">
           <motion.h2
@@ -89,9 +89,9 @@ export default function ExpertiseSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="p-6 bg-neutral-50 dark:bg-[#0a0a0a] border border-neutral-100 dark:border-neutral-800 rounded-2xl hover:shadow-md transition-shadow group"
+              className="p-6 bg-neutral-50 dark:bg-[#0b1728] border border-neutral-100 dark:border-neutral-800 rounded-2xl hover:shadow-md transition-shadow group"
             >
-              <div className="mb-4 p-3 bg-white dark:bg-[#111] inline-block rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-800 group-hover:scale-110 transition-transform">
+              <div className="mb-4 p-3 bg-white dark:bg-[#0b1728] inline-block rounded-xl shadow-sm border border-neutral-100 dark:border-neutral-800 group-hover:scale-110 transition-transform">
                 {item.icon}
               </div>
               <h3 className="text-xl font-bold mb-3 text-neutral-900 dark:text-white">{item.title}</h3>
@@ -120,7 +120,7 @@ export default function ExpertiseSection() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#111]"
+                className="p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#0b1728]"
               >
                 <h4 className="font-semibold text-lg text-neutral-900 dark:text-white mb-4 border-b border-neutral-100 dark:border-neutral-800 pb-2">
                   {skillGroup.category}

@@ -33,7 +33,7 @@ export default function TrainingSection() {
   ];
 
   return (
-    <section id="training" className="py-24 bg-neutral-50 dark:bg-[#0a0a0a]">
+    <section id="training" className="py-24 bg-neutral-50 dark:bg-[#07111f]">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export default function TrainingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08 }}
-              className="bg-white dark:bg-[#111] border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 shadow-sm"
+              className="bg-white dark:bg-[#0b1728] border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 shadow-sm"
             >
               <div className="flex items-start justify-between">
                 <div>

@@ -134,7 +134,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-background text-foreground bg-white dark:bg-[#050505] transition-colors duration-300">
+      <body className="min-h-screen flex flex-col bg-background text-foreground bg-white dark:bg-[#07111f] transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <LocaleProvider>
             <Navbar />

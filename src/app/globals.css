@@ -15,8 +15,13 @@
 }
 
 .dark {
-  --background: #050505;
-  --foreground: #ededed;
+  --background: #07111f;
+  --foreground: #f3f4f6;
+  --color-surface: #0b1728;
+}
+
+html {
+  background-color: #07111f;
 }
 
 body {
@@ -24,6 +29,11 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body.dark {
+  background-color: #07111f;
 }
 
 h1, h2, h3, h4, h5, h6 {

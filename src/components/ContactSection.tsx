@@ -57,7 +57,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-neutral-50 dark:bg-[#080808] border-t border-neutral-200 dark:border-neutral-800">
+    <section id="contact" className="py-24 bg-neutral-50 dark:bg-[#07111f] border-t border-neutral-200 dark:border-neutral-800">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16">
           <motion.div
@@ -74,13 +74,13 @@ export default function ContactSection() {
 
             <div className="flex flex-col gap-6 mb-12">
               <a href={`mailto:${t("contact.emailAddr")}`} className="flex items-center gap-4 text-neutral-600 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group">
-                <div className="p-3 bg-white dark:bg-[#111] rounded-full shadow-sm group-hover:scale-110 transition-transform">
+                <div className="p-3 bg-white dark:bg-[#0b1728] rounded-full shadow-sm group-hover:scale-110 transition-transform">
                   <Mail size={20} />
                 </div>
                 <span className="font-medium">{t("contact.emailAddr")}</span>
               </a>
               <a href="https://wa.me/966533475986" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-neutral-600 dark:text-neutral-300 hover:text-green-600 dark:hover:text-green-500 transition-colors group">
-                <div className="p-3 bg-white dark:bg-[#111] rounded-full shadow-sm group-hover:scale-110 transition-transform">
+                <div className="p-3 bg-white dark:bg-[#0b1728] rounded-full shadow-sm group-hover:scale-110 transition-transform">
                   <MessageCircle size={20} />
                 </div>
                 <span className="font-medium">+966533475986</span>
@@ -91,7 +91,7 @@ export default function ContactSection() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-neutral-600 dark:text-neutral-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
               >
-                <div className="p-3 bg-white dark:bg-[#111] rounded-full shadow-sm group-hover:scale-110 transition-transform">
+                <div className="p-3 bg-white dark:bg-[#0b1728] rounded-full shadow-sm group-hover:scale-110 transition-transform">
                   <LinkedInIcon className="h-5 w-5" />
                 </div>
                 <div className="flex flex-col">
@@ -108,7 +108,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-[#111] border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 shadow-sm"
+            className="bg-white dark:bg-[#0b1728] border border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 shadow-sm"
           >
             <h3 className="text-2xl font-bold mb-6 text-neutral-900 dark:text-white">{t("contact.sendHeading")}</h3>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -119,7 +119,7 @@ export default function ContactSection() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-[#0a0a0a] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-[#0b1728] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-all"
                   placeholder={t("contact.placeholder.name")}
                 />
               </div>
@@ -130,7 +130,7 @@ export default function ContactSection() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-[#0a0a0a] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-[#0b1728] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-all"
                   placeholder={t("contact.placeholder.email")}
                 />
               </div>
@@ -140,7 +140,7 @@ export default function ContactSection() {
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-[#0a0a0a] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-all h-32 resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-[#0b1728] focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-white transition-all h-32 resize-none"
                   placeholder={t("contact.placeholder.message")}
                 />
               </div>

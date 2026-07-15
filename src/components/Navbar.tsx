@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 import { ThemeToggle } from "./ThemeToggle";
 import { useLocale } from "@/lib/LocaleProvider";
 import { useState, useEffect } from "react";
@@ -14,16 +16,18 @@ export default function Navbar() {
 
   const navLinks = [
     { name: t("nav.home"), href: "#home" },
-    { name: t("nav.about"), href: "#about" },
     { name: t("nav.projects"), href: "#projects" },
     { name: t("nav.skills"), href: "#expertise" },
     { name: t("nav.training"), href: "#training" },
     { name: t("nav.clients"), href: "#clients" },
     { name: t("nav.contact"), href: "#contact" },
+    { name: t("nav.about"), href: "#ceo" },
   ];
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -38,6 +42,10 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setMounted(true);
   }, []);
 
   useEffect(() => {
@@ -65,6 +73,10 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+  const logoSrc = mounted && resolvedTheme === "dark"
+    ? "/logo/logo-dark.png"
+    : "/logo/light-logo.png";
+
   return (
     <>
       <motion.div
@@ -74,13 +86,20 @@ export default function Navbar() {
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/70 dark:bg-[#050505]/70 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 shadow-sm pt-1"
+            ? "bg-white/70 dark:bg-[#07111f]/80 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 shadow-sm pt-1"
             : "bg-transparent pt-1"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="#home" className="font-bold text-xl tracking-tight">
-            Tech Data <span className="text-blue-600 dark:text-blue-400">Axiom</span>
+          <Link href="#home" className="flex items-center">
+            <Image
+              src={logoSrc}
+              alt="Dr Saqlain logo"
+              width={180}
+              height={56}
+              priority
+              className="h-11 w-auto md:h-12"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -137,7 +156,7 @@ export default function Navbar() {
 
         {/* Mobile Nav */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-[84px] left-0 w-full bg-white dark:bg-[#050505] border-b border-neutral-200 dark:border-neutral-800 shadow-lg px-6 py-4 flex flex-col gap-4">
+          <div className="md:hidden absolute top-[84px] left-0 w-full bg-white dark:bg-[#07111f] border-b border-neutral-200 dark:border-neutral-800 shadow-lg px-6 py-4 flex flex-col gap-4">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
