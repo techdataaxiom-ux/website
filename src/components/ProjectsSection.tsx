@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { ChevronDown, Code, Database, LineChart, Cpu, MessageSquare } from "lucide-react";
+import { ChevronDown, Code, Database, LineChart, Cpu, MessageSquare, SquareEqualIcon } from "lucide-react";
 import { useLocale } from "@/lib/LocaleProvider";
 
 export default function ProjectsSection() {
@@ -41,7 +41,7 @@ export default function ProjectsSection() {
       client: "United Nations Development Programme (UNDP)",
       domain: "Governance & Institutional Development",
       icon: <Cpu className="text-cyan-500" size={24} />,
-      summary: "Conducted data collection and analysis to support governance reforms and institutional development in newly merged districts.",
+      summary: "Conducted data collection and analysis to support governance reforms and institutional  in newly merged districts.",
       problem: "Integration of newly merged districts required sustainable governance and infrastructure systems.",
       solution: "Contributed to data-driven insights, reporting, and policy support for sustainable institutional development through comprehensive analysis and recommendations.",
       tools: ["Governance Analytics", "Policy Support", "Data Analysis", "Social Infrastructure", "Institutional Development"],
@@ -82,6 +82,30 @@ export default function ProjectsSection() {
       solution: "Created streamlined analysis pipelines and automated outputs that supported monitoring, program review, and stakeholder updates with minimal manual effort.",
       tools: ["Automation", "Dashboarding", "Data Integration", "Program Insights", "Reporting Pipelines"],
       impact: "Enabled faster reporting cycles and stronger decision support for policy and program implementation.",
+    },
+    {
+      id: 7,
+      title: "Biostatistical Analyses",
+      client: "Academic Collaboration",
+      domain: "Biostatistics & Analysis",
+      icon: <Database className="text-indigo-500" size={24} />,
+      summary: "Applied biostatistical theories and methods, analyzed health-related data and inform evidence-based research.",
+      problem: "Research teams working on complex health data needs robust analytical capabilities.",
+      solution: "Developed and implemented biostatistical models and analyses to support evidence-based research and decision-making.",
+      tools: ["Biostatistics", "Sample Size", "Statistical Modeling", "Clinical Trials", "Public Health", "R, Stata, Python & SPSS"],
+      impact: "Enhanced the quality and reliability of research findings and informed evidence-based research.",
+    },
+    {
+      id: 8,
+      title: "Econometric Modeling & Analyses",
+      client: "Academic Collaboration",
+      domain: "Econometric Modeling & Analyses",
+      icon: <SquareEqualIcon className="text-indigo-500" size={24} />,
+      summary: "Applied econometric theories and methods to policy research i.e. testing complementarity.",
+      problem: "Payoffs of joint adoption of strategies results in the form of complementarity or substitutability.",
+      solution: "Developed and implemented econometric models for testing complementarity to inform policy decisions.",
+      tools: ["Microeconometrics", "Complementarity Modeling", "Analyses", "Decision Science"],
+      impact: "Enhanced the quality and reliability of research findings and informed evidence-based research.",
     },
   ];
 

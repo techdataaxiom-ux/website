@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
+  <defs>
+    <linearGradient id="background" x1="8" y1="4" x2="88" y2="92" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#172554"/>
+      <stop offset="1" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="map" x1="13" y1="22" x2="62" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67E8F9"/>
+      <stop offset=".5" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#818CF8"/>
+    </linearGradient>
+    <linearGradient id="chart" x1="49" y1="39" x2="88" y2="75" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#FB7185"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#background)"/>
+  <path d="M11 19.5 25 14l11 4 9-5 14 6-2 10 7 8-5 12 4 9-12 11-10-4-8 6-9-7-12 1-5-11 4-9-5-9 5-6Z" fill="url(#map)" fill-opacity=".86"/>
+  <path d="m19 24 9 3 3 8-5 5 5 6-4 8 7 6m2-42-3 9 6 6-2 8 8 4-1 8m12-39-7 5 2 8-6 7 5 7-5 8m-38-9 10-3 8 4 7-2 8 6 11-2" stroke="#E0F2FE" stroke-opacity=".52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="27" cy="35" r="3" fill="#FDE047"/>
+  <circle cx="27" cy="35" r="6" stroke="#FEF08A" stroke-opacity=".7" stroke-width="1.5"/>
+  <circle cx="45" cy="47" r="3.5" fill="#FB7185"/>
+  <circle cx="45" cy="47" r="7" stroke="#FDA4AF" stroke-opacity=".75" stroke-width="1.5"/>
+  <circle cx="34" cy="58" r="2.5" fill="#FBBF24"/>
+  <circle cx="34" cy="58" r="5.5" stroke="#FDE68A" stroke-opacity=".75" stroke-width="1.5"/>
+  <circle cx="54" cy="31" r="2.5" fill="#C084FC"/>
+  <circle cx="54" cy="31" r="5.5" stroke="#DDD6FE" stroke-opacity=".72" stroke-width="1.5"/>
+  <rect x="47" y="50" width="40" height="31" rx="7" fill="#fff" fill-opacity=".96"/>
+  <path d="M53 73h28" stroke="#CBD5E1" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M54 69.5 60 65l5 2 5-8 5 3 6-8" stroke="url(#chart)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="81" cy="54" r="2.5" fill="#FB7185"/>
+</svg>

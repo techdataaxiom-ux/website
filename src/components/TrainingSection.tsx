@@ -8,27 +8,24 @@ export default function TrainingSection() {
   const trainings = [
     {
       id: 1,
-      title: "Applied Biostatistics Workshop",
-      org: "WHO Collaborating Centre",
+      title: t("training.card.0.title"),
+      org: t("training.card.0.org"),
       date: "2023",
-      description:
-        "Hands-on workshop covering regression, survival analysis, and sample size computation for public health research.",
+      description: t("training.card.0.description"),
     },
     {
       id: 2,
-      title: "Survey Design & Sampling",
-      org: "National Institute of Statistics",
+      title: t("training.card.1.title"),
+      org: t("training.card.1.org"),
       date: "2021",
-      description:
-        "Two-day training on probability sampling, weighting, and field operations for large-scale household surveys.",
+      description: t("training.card.1.description"),
     },
     {
       id: 3,
-      title: "Machine Learning for Health Analytics",
-      org: "University Short Course",
+      title: t("training.card.2.title"),
+      org: t("training.card.2.org"),
       date: "2022",
-      description:
-        "Introductory course on applying supervised and unsupervised learning to health datasets and outcome prediction.",
+      description: t("training.card.2.description"),
     },
   ];
 

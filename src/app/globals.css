@@ -22,6 +22,7 @@
 
 html {
   background-color: #07111f;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -30,6 +31,17 @@ body {
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+section {
+  display: block;
+  width: 100%;
+  position: relative;
+  scroll-margin-top: 110px;
+}
+
+main {
+  display: block;
 }
 
 body.dark {

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { ThemeToggle } from "./ThemeToggle";
 import { useLocale } from "@/lib/LocaleProvider";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
@@ -14,15 +14,17 @@ import { motion, useScroll, useSpring } from "framer-motion";
 export default function Navbar() {
   const { locale, setLocale, t } = useLocale();
 
-  const navLinks = [
-    { name: t("nav.home"), href: "#home" },
-    { name: t("nav.projects"), href: "#projects" },
-    { name: t("nav.skills"), href: "#expertise" },
-    { name: t("nav.training"), href: "#training" },
-    { name: t("nav.clients"), href: "#clients" },
-    { name: t("nav.contact"), href: "#contact" },
-    { name: t("nav.about"), href: "#ceo" },
-  ];
+  const navLinks = useMemo(
+    () => [
+      { name: t("nav.home"), href: "#home" },
+      { name: t("nav.services"), href: "#services" },
+      { name: t("nav.projects"), href: "#projects" },
+      { name: t("nav.training"), href: "#training" },
+      { name: t("nav.clients"), href: "#clients" },
+      { name: t("nav.contact"), href: "#contact" },
+    ],
+    [t]
+  );
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -49,29 +51,40 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    const sectionIds = navLinks.map((link) => link.href.replace("#", ""));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section instanceof HTMLElement);
+
+    if (sections.length === 0) return;
+
     const observerOptions = {
       root: null,
-      rootMargin: "-20% 0px -60% 0px",
-      threshold: 0
+      rootMargin: "-25% 0px -45% 0px",
+      threshold: [0, 0.15, 0.35, 0.5, 0.75, 1],
     };
 
     const observerCallback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
+      const visibleEntries = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visibleEntries.length > 0) {
+        setActiveSection(visibleEntries[0].target.id);
+      }
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-    navLinks.forEach((link) => {
-      const el = document.getElementById(link.href.substring(1));
-      if (el) observer.observe(el);
-    });
+    sections.forEach((section) => observer.observe(section));
+
+    const hash = window.location.hash.replace("#", "");
+    if (hash && sectionIds.includes(hash)) {
+      setActiveSection(hash);
+    }
 
     return () => observer.disconnect();
-  }, []);
+  }, [navLinks]);
 
   const logoSrc = mounted && resolvedTheme === "dark"
     ? "/logo/logo-dark.png"
@@ -111,6 +124,8 @@ export default function Navbar() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
+                      aria-current={isActive ? "page" : undefined}
+                      onClick={() => setActiveSection(link.href.replace("#", ""))}
                       className={`relative text-sm font-medium transition-colors group px-1 py-2 ${
                         isActive 
                           ? "text-blue-600 dark:text-blue-400" 
@@ -163,7 +178,11 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  aria-current={isActive ? "page" : undefined}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setActiveSection(link.href.replace("#", ""));
+                  }}
                   className={`text-lg font-medium py-2 ${
                     isActive ? "text-blue-600 dark:text-blue-400" : "text-neutral-800 dark:text-neutral-200"
                   }`}

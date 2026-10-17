@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
 import translations from "./translations";
 
 type Locale = "en" | "fr" | "ar";
@@ -42,10 +42,10 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
 
   const setLocale = (l: Locale) => setLocaleState(l);
 
-  const t = (key: string) => {
+  const t = useCallback((key: string) => {
     const map = translations[locale] || translations[defaultLocale];
     return map[key] || translations[defaultLocale][key] || key;
-  };
+  }, [locale]);
 
   return (
     <LocaleContext.Provider value={{ locale, setLocale, t }}>
