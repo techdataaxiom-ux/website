@@ -50,27 +50,27 @@ export default function AboutSection() {
   const highlights = [
     {
       title: "Evidence-first strategy",
-      icon: <Users className="w-5 h-5" />,
+      icon: <Users className="w-8 h-5" />,
     },
     {
       title: "AI-enabled insight",
-      icon: <BrainCircuit className="w-5 h-5" />,
+      icon: <BrainCircuit className="w-8 h-5" />,
     },
     {
       title: "Data governance",
-      icon: <Database className="w-5 h-5" />,
+      icon: <Database className="w-8 h-6" />,
     },
     {
       title: "Program evaluation",
-      icon: <LineChart className="w-5 h-5" />,
+      icon: <LineChart className="w-8 h-6" />,
     },
     {
       title: "Digital systems",
-      icon: <Workflow className="w-5 h-5" />,
+      icon: <Workflow className="w-8 h-6" />,
     },
     {
       title: "Global perspective",
-      icon: <Globe2 className="w-5 h-5" />,
+      icon: <Globe2 className="w-8 h-6" />,
     },
   ];
 
@@ -278,7 +278,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto max-w-[1400px]">
 
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -296,14 +296,21 @@ export default function AboutSection() {
                     y: -5,
                     scale: 1.03,
                   }}
-                  className="h-full rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all dark:border-slate-700 dark:bg-[#0d1b2c]"
+                  className="h-full min-h-[150px] w-full rounded-[26px] border border-slate-200 bg-white/80 p-4 shadow-[0_2px_8px_rgba(15,23,42,0.04)] transition-all dark:border-slate-700 dark:bg-[#0d1b2c]/80 sm:p-5"
                 >
-                  <div className="flex h-full items-center gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/20">
+                  <div className="flex h-full w-full items-center gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-300">
                       {item.icon}
                     </div>
 
-                    <h4 className="text-sm font-semibold leading-tight sm:text-base">
+                    <h4
+                      className="min-w-0 flex-1 whitespace-normal text-[1.05rem] font-semibold leading-[1.1] tracking-[-0.03em] text-slate-900 dark:text-slate-100 sm:text-[1.1rem]"
+                      style={{
+                        hyphens: "none",
+                        overflowWrap: "break-word",
+                        wordBreak: "normal",
+                      }}
+                    >
                       {item.title}
                     </h4>
                   </div>
