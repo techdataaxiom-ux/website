@@ -1,0 +1,7 @@
+<svg width="800" height="420" viewBox="0 0 800 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="420" fill="#1AA3E8"/>
+  <path d="M125 286C145 307 178 321 208 323C244 325 263 315 285 294C302 278 310 257 309 231C307 204 292 185 268 173C242 160 208 157 178 163C135 172 99 193 74 221C52 246 46 277 60 299C69 313 82 324 107 330C121 334 140 336 160 336" stroke="white" stroke-width="22" stroke-linecap="round"/>
+  <text x="138" y="270" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="192" font-weight="800" letter-spacing="-8">elunic</text>
+  <circle cx="680" cy="98" r="18" fill="white"/>
+  <text x="669" y="108" fill="#1AA3E8" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">®</text>
+</svg>

@@ -6,86 +6,69 @@ import { useLocale } from "@/lib/LocaleProvider";
 
 export default function ClientsSection() {
   const clients = [
-    { id: 1, name: "UNDP", logo: "/logo/un-dp.jpeg" },
+    { id: 1, name: "ROGRAMME", logo: "/logo/images.jpg" },
     { id: 2, name: "BISP", logo: "/logo/pisp.jpeg" },
-    { id: 3, name: "PBS", logo: "/logo/pbs.jpg" },
-    { id: 4, name: "PWD", logo: "/logo/pwd.jpeg" },
-    { id: 5, name: "PCP", logo: "/logo/pcp.jpeg" },
-    { id: 6, name: "Cornis", logo: "/logo/cornis-logo.png" },
-    { id: 7, name: "CVS Health", logo: "/logo/cvs-health.svg" },
-    { id: 8, name: "GPN Technologies", logo: "/logo/gpn-technologies.jpg" },
-    { id: 9, name: "KPMG", logo: "/logo/kpmg-logo.jpg" },
-    { id: 10, name: "MoIB", logo: "/logo/moib.jpg" },
-    { id: 11, name: "Near Space", logo: "/logo/near_space_logo.jpg" },
-    { id: 12, name: "Queens University", logo: "/logo/queens-university.png" },
-    { id: 13, name: "Image", logo: "/logo/images.jpg" },
+    { id: 3, name: "Population Welfare Department", logo: "/logo/pwd.jpeg" },
+    { id: 4, name: "Cornis", logo: "/logo/cornis-logo.png" },
+    { id: 5, name: "CVS Health", logo: "/logo/cvs-health.svg" },
+    { id: 6, name: "GPN Technologies", logo: "/logo/gpn-technologies.jpg" },
+    { id: 7, name: "Elunic", logo: "/logo/elunic.svg" },
+    { id: 8, name: "UNDP", logo: "/logo/un-dp.jpeg" },
   ];
 
   const loopClients = [...clients, ...clients];
-
   const { t } = useLocale();
 
   return (
-    <section
-      id="clients"
-      className="py-24 bg-white dark:bg-[#07111f] overflow-hidden"
-    >
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+    <section id="clients" className="overflow-hidden bg-white py-24 dark:bg-[#07111f]">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-12 text-center">
+          <h2 className="mb-6 text-4xl font-black tracking-tight text-neutral-900 dark:text-white md:text-7xl">
             {t("clients.title")} <span className="text-blue-600 dark:text-blue-400">{t("clients.subtitle")}</span>
           </h2>
-          <p className="text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto text-lg">
+
+          <p className="mx-auto max-w-3xl text-lg font-light text-neutral-600 italic dark:text-neutral-300 md:text-2xl">
             {t("clients.desc")}
           </p>
-          <p className="text-neutral-500 dark:text-neutral-400 max-w-3xl mx-auto mt-4 text-sm md:text-base">
+
+          <p className="mx-auto mt-6 max-w-4xl text-base text-neutral-600 dark:text-neutral-400 md:text-xl">
             Selected engagements span policy analytics, data workflow design, reporting automation, and evidence-driven program support.
           </p>
         </div>
 
-        {/* Gradient edges */}
-        <div className="relative">
-          <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white dark:from-[#07111f] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white dark:from-[#07111f] to-transparent z-10 pointer-events-none" />
+        <div className="relative mb-16 overflow-hidden">
+          <div className="absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-white to-transparent dark:from-[#07111f]" />
+          <div className="absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-white to-transparent dark:from-[#07111f]" />
 
-          {/* Scrolling logos */}
           <motion.div
-            className="flex items-center gap-16"
+            className="flex w-max items-center gap-4"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
-              duration: 22,
+              duration: 26,
               ease: "linear",
             }}
           >
             {loopClients.map((client, index) => (
               <div
-                key={index}
-                className="flex-shrink-0 flex items-center justify-center"
+                key={`${client.id}-${index}`}
+                className="flex h-28 w-48 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 shadow-sm transition-all duration-300 hover:shadow-md dark:border-neutral-800 dark:bg-[#0b1728]"
               >
-                {/* Bigger rounded container */}
-                <div className="h-20 w-40 rounded-2xl overflow-hidden flex items-center justify-center 
-                                bg-white dark:bg-[#111] border border-neutral-200 dark:border-neutral-800
-                                shadow-sm hover:shadow-md transition duration-300">
-                  
+                <div className="flex h-full w-full items-center justify-center p-3">
                   <Image
                     src={client.logo}
                     alt={client.name}
-                    width={200}
-                    height={100}
-                    className="h-16 w-auto object-contain transition duration-300 hover:scale-105"
+                    width={180}
+                    height={90}
+                    className="max-h-14 w-auto object-contain transition-transform duration-300 hover:scale-105"
                   />
-
                 </div>
               </div>
             ))}
           </motion.div>
         </div>
 
-        {/* Bottom text */}
-        <p className="text-center text-neutral-500 dark:text-neutral-500 text-sm mt-12">
+        <p className="text-center text-base text-neutral-500 dark:text-neutral-400 md:text-xl">
           {t("clients.bottom")}
         </p>
       </div>

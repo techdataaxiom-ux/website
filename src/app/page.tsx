@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection";
+import AIWorkflowSection from "@/components/AIWorkflowSection";
 import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import TrainingSection from "@/components/TrainingSection";
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <AIWorkflowSection />
       <AboutSection />
       <ExpertiseSection />
       <ProjectsSection />
