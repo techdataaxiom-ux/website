@@ -18,7 +18,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://zulfiqar-ali-ai.vercel.app"),
+  metadataBase: new URL("https://zulfiqarali.vercel.app/"),
   title: "Tech Data Axiom | Public Health Consulting & Data Science",
   description:
     "Tech Data Axiom — a consulting firm specializing in survey design, policy analysis, data analytics, and AI-enabled decision support systems for government and development sectors.",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Tech Data Axiom | Public Health Consulting & Data Science",
     description:
       "Tech Data Axiom — a consulting firm specializing in survey design, policy analysis, data analytics, and AI-enabled decision support systems for government and development sectors.",
-    url: "https://zulfiqar-ali-ai.vercel.app",
+    url: "https://zulfiqarali.vercel.app/",
     siteName: "Tech Data Axiom",
     images: [
       {
@@ -56,8 +56,8 @@ const structuredData = {
   "@type": "Organization",
   name: "Tech Data Axiom",
   description: "A consulting firm specializing in data science, AI solutions, public health analytics, and decision support systems.",
-  url: "https://zulfiqar-ali-ai.vercel.app",
-  logo: "https://zulfiqar-ali-ai.vercel.app/profile.png",
+  url: "https://zulfiqarali.vercel.app/",
+  logo: "https://zulfiqarali.vercel.app/profile.png",
   sameAs: [
     "https://www.linkedin.com/company/development-thorough-data/",
   ],
