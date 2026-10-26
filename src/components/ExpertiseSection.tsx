@@ -164,7 +164,7 @@ export default function ExpertiseSection() {
             transition={{ delay: 0.1 }}
             className="text-neutral-600 dark:text-neutral-400 text-lg max-w-2xl"
           >
-            {t("expertise.subtitle")} Strategic advisory in public health innovation, research governance, data-driven policy, AI oversight, and program transformation.
+            {t("expertise.subtitle")} {t("expertise.subtitle.extra")}
           </motion.p>
         </div>
 
@@ -227,7 +227,7 @@ export default function ExpertiseSection() {
             className="text-center mb-12"
           >
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 mb-3">
-              Capabilities
+              {t("expertise.capabilities.kicker")}
             </p>
 
             <h3 className="text-2xl md:text-4xl font-bold tracking-tight text-neutral-900 dark:text-white">
@@ -235,8 +235,7 @@ export default function ExpertiseSection() {
             </h3>
 
             <p className="mt-4 max-w-2xl mx-auto text-neutral-600 dark:text-neutral-400">
-              A focused range of specialist capabilities designed to turn
-              complex data, research and knowledge into practical outcomes
+              {t("expertise.capabilities.description")}
             </p>
           </motion.div>
 

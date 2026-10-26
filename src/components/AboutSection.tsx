@@ -49,80 +49,74 @@ export default function AboutSection() {
 
   const highlights = [
     {
-      title: "Evidence-first strategy",
+      title: t("about.highlight.0"),
       icon: <Users className="w-8 h-5" />,
     },
     {
-      title: "AI-enabled insight",
+      title: t("about.highlight.1"),
       icon: <BrainCircuit className="w-8 h-5" />,
     },
     {
-      title: "Data governance",
+      title: t("about.highlight.2"),
       icon: <Database className="w-8 h-6" />,
     },
     {
-      title: "Program evaluation",
+      title: t("about.highlight.3"),
       icon: <LineChart className="w-8 h-6" />,
     },
     {
-      title: "Digital systems",
+      title: t("about.highlight.4"),
       icon: <Workflow className="w-8 h-6" />,
     },
     {
-      title: "Global perspective",
+      title: t("about.highlight.5"),
       icon: <Globe2 className="w-8 h-6" />,
     },
   ];
 
   const capabilities = [
     {
-      title: "Advanced Analytics by Experts",
-      description:
-        "Statistical modeling, predictive analytics and evidence synthesis for complex decision environments.",
+      title: t("about.capability.0.title"),
+      description: t("about.capability.0.description"),
       icon: <LineChart className="w-6 h-6" />,
     },
     {
-      title: "Responsible Artificial Intelligence Use",
-      description:
-        "AI-powered solutions designed to improve research, operations, forecasting and strategic decision-making.",
+      title: t("about.capability.1.title"),
+      description: t("about.capability.1.description"),
       icon: <BrainCircuit className="w-6 h-6" />,
     },
     {
-      title: "Professional Expert Team",
-      description:
-        "Rigorous research design, biostatistics, program evaluation and outcome measurement.",
+      title: t("about.capability.2.title"),
+      description: t("about.capability.2.description"),
       icon: <Users className="w-6 h-6" />,
     },
     {
-      title: "Effective Data Science & Governance",
-      description:
-        "Frameworks for data quality, governance, interoperability, responsible AI and evidence management.",
+      title: t("about.capability.3.title"),
+      description: t("about.capability.3.description"),
       icon: <Database className="w-6 h-6" />,
     },
     {
-      title: "Digital Transformation",
-      description:
-        "Translating organizational challenges into scalable digital systems and intelligent workflows.",
+      title: t("about.capability.4.title"),
+      description: t("about.capability.4.description"),
       icon: <Workflow className="w-6 h-6" />,
     },
     {
-      title: "Companion for the Project Lifecycle",
-      description:
-        "Turning fragmented information into actionable intelligence for policy and strategic planning.",
+      title: t("about.capability.5.title"),
+      description: t("about.capability.5.description"),
       icon: <Target className="w-6 h-6" />,
     },
   ];
 
   const sectors = [
-    { name: "Academia", icon: GraduationCap },
-    { name: "Healthcare", icon: HeartPulse },
-    { name: "Nonprofits", icon: HandHeart },
-    { name: "Government", icon: Landmark },
-    { name: "Enterprises", icon: BriefcaseBusiness },
-    { name: "Public Health", icon: Shield },
-    { name: "Research Networks", icon: Network },
-    { name: "Business & Industry", icon: Factory },
-    { name: "Development Organizations", icon: Building2 },
+    { name: t("about.sector.0"), icon: GraduationCap },
+    { name: t("about.sector.1"), icon: HeartPulse },
+    { name: t("about.sector.2"), icon: HandHeart },
+    { name: t("about.sector.3"), icon: Landmark },
+    { name: t("about.sector.4"), icon: BriefcaseBusiness },
+    { name: t("about.sector.5"), icon: Shield },
+    { name: t("about.sector.6"), icon: Network },
+    { name: t("about.sector.7"), icon: Factory },
+    { name: t("about.sector.8"), icon: Building2 },
   ];
 
   return (
@@ -144,13 +138,11 @@ export default function AboutSection() {
           className="mb-10 text-center text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
         >
           <span className="block whitespace-nowrap">
-            Ready-Made{" "}
-            <span className="text-blue-600">Data</span>
+            {t("about.hero.title.0")} <span className="text-blue-600">{t("about.hero.title.1")}</span>
           </span>
           <span className="block whitespace-nowrap">
-            for{" "}
-            <span className="bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-text text-transparent">
-              Future-Made Solutions
+            {t("about.hero.title.2")} <span className="bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-text text-transparent">
+              {t("about.hero.title.3")}
             </span>
           </span>
         </motion.h2>
@@ -248,19 +240,19 @@ export default function AboutSection() {
             {[
               {
                 number: "25+",
-                label: "Projects",
+                label: t("about.stats.0.label"),
               },
               {
                 number: "40+",
-                label: "AI Solutions",
+                label: t("about.stats.1.label"),
               },
               {
                 number: "15+",
-                label: "Partners",
+                label: t("about.stats.2.label"),
               },
               {
                 number: "10+",
-                label: "Years Experience",
+                label: t("about.stats.3.label"),
               },
             ].map((item) => (
               <div
@@ -335,14 +327,14 @@ export default function AboutSection() {
           <div className="text-center max-w-3xl mx-auto">
 
             <span className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-600">
-              WHY TECH DATA AXIOM
+              {t("about.why.kicker")}
             </span>
 
             <h3 className="mt-4 text-4xl lg:text-5xl font-extrabold">
-              Where Insight Meet
-              <span className="text-blue-600"> Innovation</span>
+              {t("about.why.title.0")}
+              <span className="text-blue-600"> {t("about.why.title.1")}</span>
               <span className="bg-gradient-to-r from-cyan-500 to-purple-500 bg-clip-text text-transparent">
-                {" "}&amp; Innovation Meets Impact
+                {" "}&amp; {t("about.why.title.2")}
               </span>
             </h3>
 
@@ -398,14 +390,14 @@ export default function AboutSection() {
             <div className="rounded-[28px] border border-slate-200 bg-white/90 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-sm dark:border-slate-700 dark:bg-[#0d1b2c]/80 sm:p-7">
               <div className="flex items-center justify-between gap-4">
                 <span className="text-xs font-bold uppercase tracking-[0.28em] text-blue-600">
-                  Sectors We Serve
+                  {t("about.sectors.kicker")}
                 </span>
                 <div className="h-px flex-1 bg-gradient-to-r from-blue-200 via-blue-100 to-transparent dark:from-blue-400/40 dark:via-blue-300/20 dark:to-transparent" />
               </div>
 
               <h3 className="mt-4 text-3xl font-extrabold leading-tight text-slate-900 dark:text-white sm:text-4xl">
-                Expertise Built for
-                <span className="block text-blue-600">Complex Systems</span>
+                {t("about.sectors.title.0")}
+                <span className="block text-blue-600">{t("about.sectors.title.1")}</span>
               </h3>
 
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -413,7 +405,7 @@ export default function AboutSection() {
                   <div
                     key={name}
                     className={`group relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-blue-50/80 p-3.5 shadow-[0_10px_28px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_16px_35px_rgba(37,99,235,0.12)] dark:border-slate-700 dark:from-[#10263a] dark:via-[#0d1b2c] dark:to-[#111e31] ${
-                      name === "Development Organizations" ? "sm:col-span-2" : ""
+                      name === t("about.sector.8") ? "sm:col-span-2" : ""
                     }`}
                   >
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.14),transparent_36%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -442,9 +434,9 @@ export default function AboutSection() {
                 </div>
 
                 <h3 className="text-3xl font-bold leading-tight">
-                  Local Insight.
+                  {t("about.network.title.0")}
                   <br />
-                  Global Perspective.
+                  {t("about.network.title.1")}
                 </h3>
 
                 <div className="mt-8 grid grid-cols-2 gap-4">
@@ -453,11 +445,11 @@ export default function AboutSection() {
                     <Users className="mb-3 h-6 w-6" />
 
                     <p className="font-semibold">
-                      Multidisciplinary
+                      {t("about.network.card.0.title")}
                     </p>
 
                     <p className="mt-1 text-sm text-blue-100">
-                      Expertise
+                      {t("about.network.card.0.subtitle")}
                     </p>
                   </div>
 
@@ -465,11 +457,11 @@ export default function AboutSection() {
                     <Network className="mb-3 h-6 w-6" />
 
                     <p className="font-semibold">
-                      Connected
+                      {t("about.network.card.1.title")}
                     </p>
 
                     <p className="mt-1 text-sm text-blue-100">
-                      Ecosystems
+                      {t("about.network.card.1.subtitle")}
                     </p>
                   </div>
 
@@ -500,20 +492,27 @@ export default function AboutSection() {
 
               <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 dark:bg-blue-900/20 px-4 py-2 text-sm font-semibold text-blue-600">
                 <Sparkles className="w-4 h-4" />
-                Data • Research • AI • Impact
+                {t("about.cta.badge")}
               </span>
 
               <h3 className="mt-6 text-4xl lg:text-5xl font-extrabold">
-                Turning Complex Challenges
+                {t("about.cta.title.0")}
                 <br />
-                Into <span className="text-blue-600">Actionable Intelligence</span>
+                {t("about.cta.title.1").includes("Intelligence") ? (
+                  <>
+                    {t("about.cta.title.1").slice(0, t("about.cta.title.1").lastIndexOf(" "))}{" "}
+                    <span className="text-blue-600">{t("about.cta.title.1").slice(t("about.cta.title.1").lastIndexOf(" ") + 1)}</span>
+                  </>
+                ) : (
+                  <span className="text-blue-600">{t("about.cta.title.1")}</span>
+                )}
               </h3>
 
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 mt-8 rounded-xl bg-blue-600 px-8 py-4 text-white font-semibold shadow-lg hover:bg-blue-700 transition"
               >
-                Discuss Your Challenge
+                {t("about.cta.button")}
                 <ArrowRight size={18} />
               </a>
 

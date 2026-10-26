@@ -254,9 +254,6 @@ export default function HeroSection() {
 
           </h1>
 
-          <p className="mt-5 text-sm sm:text-base text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-            {t("hero.leadership")}
-          </p>
 
         </motion.div>
 
@@ -390,9 +387,7 @@ export default function HeroSection() {
 
           >
 
-            Data • Research • Analytics • Governance • Training • Digital
-
-            Solutions
+            {t("hero.services")}
 
           </p>
 
@@ -440,11 +435,7 @@ export default function HeroSection() {
 
         >
 
-          We help businesses, enterprises, academia, research networks and development
-
-          organizations solve data challenges to integrate & create measurable impact—without the cost of
-
-          building a large specialist team.
+          {t("hero.description")}
 
         </motion.p>
 
