@@ -11,9 +11,7 @@ const translations: Record<string, Record<string, string>> = {
     "training.title": "Training & Workshops",
     "training.subtitle":
       "Selected trainings and short courses I have delivered or attended to strengthen analytic capacity and research methods.",
-    "hero.description":
-      "We are where DATA and TECH complement each other. Data • Research • Analytics • Governance • Knowledge • Digital Solutions. We help businesses, government, academia, research & development organizations solve complex problems, make evidence-based decisions, and create measurable impact—without the cost of building a large specialist team.",
-    "hero.tagline": "Healthy Data - Healthy Decisions",
+    "hero.description": "Turning complex data into clear decisions, stronger systems, and measurable impact across health, research, and policy.",
     "hero.role.0": "Data Science",
     "hero.role.1": "Data Governance",
     "hero.role.2": "Clinical Trials",
